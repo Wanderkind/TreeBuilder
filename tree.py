@@ -34,7 +34,7 @@ cease = 'no'
 count = 1
 while cease == 'no':
     
-    msg = str('Input parent # from 0 to ' + str(count - 1) + ' > ')
+    msg = f'Input parent # from 0 to {count - 1}, Input X to cease > '
     parentpre = input(msg)
     ScL.append(parentpre)
     
