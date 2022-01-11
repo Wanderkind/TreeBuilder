@@ -443,7 +443,7 @@ for i in range(len(LL)):
 for i in range(len(Lprint) - 1):
     Lprint[i + 1] = list(Lprint[i + 1])
     for j in range(len(Lprint[i])):
-        if Lprint[i][j] == '│':
+        if Lprint[i][j] == '│' or Lprint[i][j] == '┬':
             if Lprint[i + 1][j] == ' ':
                 Lprint[i + 1][j] = '│'
                 del Lprint[i + 1][j + 1]
