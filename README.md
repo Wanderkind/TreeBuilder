@@ -1,3 +1,3 @@
 # TreeBuilder
 
-Incomplete for now.
+Incomplete for now, but usable.
