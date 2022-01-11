@@ -28,8 +28,6 @@ OL = [None]
 LL = []
 ScL = []
 
-##############################
-
 cease = 'no'
 count = 1
 while cease == 'no':
@@ -77,8 +75,6 @@ while cease == 'no':
     CL.append([])
     CL[parent].append(count)
     OL.append(0)
-    
-    ##############################
     
     content = input('Input text > ')
     ScL.append(content)
@@ -130,8 +126,6 @@ while cease == 'no':
             LL[ln].append(node)
     
     count += 1
-
-    ##############################
     
     LLps = []
     for i in range(len(LL)):
@@ -256,8 +250,6 @@ while cease == 'no':
                 t += (LLps[i][j] + ' ')
         print(t)
     print('')
-
-##############################
     
 for i in range(len(LL)):
     for j in range(len(LL[i]) - 1, 0, -1):
@@ -370,18 +362,96 @@ for i in range(1, len(LL)):
         if LL[i][j] == 'XXXXX':
             LL[i][j] = sp(str(LL[i - 1][j]))
 
-print('\n▼▼▼▼▼▼▼▼▼▼\n')
+print('\n┌──────┬─────┬─────┬─────┐ ')
+print('│      │ 9pt │ 10pt│ 11pt│ ')
+print('├──────┼─────┼─────┼─────┤ ')
+print('│ 기본 │ 94  │ 85  │ 77  │ ')
+print('├──────┼─────┼─────┼─────┤ ')
+print('│ 좁게1│ 106 │ 96  │ 87  │ ')
+print('├──────┼─────┼─────┼─────┤ ')
+print('│ 좁게2│ 119 │ 107 │ 97  │ ')
+print('├──────┼─────┼─────┼─────┤ ')
+print('│ 좁게 │ 119 │ 107 │ 97  │ ')
+print('└──────┴─────┴─────┴─────┘ ')
+
+while True:
+    
+    colpre = input('Input numer of columns > ')
+    
+    if colpre == '':
+        colpre = input('Input numer of columns > ')
+        continue
+    
+    order = []
+    for i in range(len(colpre)):
+        order.append(ord(colpre[i]))
+    
+    if 48 <= min(order) and max(order) < 58:
+        col = int(colpre)
+        break
+    
+    else:
+        colpre = input('Input numer of columns per line > ')
+        continue
+
 for i in range(len(LL)):
     
     if all(x == ' ' for x in LL[i]):
-        print('\n')
+        LL[i] = ''
     
     else:
         a = ''
         for j in range(len(LL[i])):
             a += str(LL[i][j])
             a += ' '
-        print(a)
+        LL[i] = a
+
+Lprint = []
+for i in range(len(LL)):
+    
+    a = ''
+    broken = []
+    for j in range(len(LL[i])):
+        
+        K = str(LL[i][j])
+        a += K
+        
+        if K == '─' or K == '└' or K == '├' or K == '┬':
+            broken.append(a + ' ')
+        
+        if w(a) >= col - 1:
+            Lprint.append(a)
+            
+            if i != len(LL) - 1:
+                
+                if w(LL[i + 1]) != 0:
+                    
+                    if w(LL[i + 1]) == w(broken[-1]):
+                        a = LL[i + 1]
+                    
+                    else:
+                        a = sp(broken[-1])
+                
+                else:
+                    a = sp(broken[-1])
+            
+            else:
+                a = sp(broken[-1])
+        
+    Lprint.append(a)
+
+for i in range(len(Lprint) - 1):
+    Lprint[i + 1] = list(Lprint[i + 1])
+    for j in range(len(Lprint[i])):
+        if Lprint[i][j] == '│':
+            if Lprint[i + 1][j] == ' ':
+                Lprint[i + 1][j] = '│'
+                del Lprint[i + 1][j + 1]
+    Lprint[i + 1] = ''.join(Lprint[i + 1])
+
+print('\n▼▼▼▼▼▼▼▼▼▼\n')
+for i in range(len(Lprint)):
+    print(Lprint[i])
 print('\n▲▲▲▲▲▲▲▲▲▲\n')
 
 while True:
@@ -389,6 +459,7 @@ while True:
     ans = input('Print script? input P to print, Q to quit > ')
     if ans == 'P' or ans == 'p' or ans == 'ㅔ':
         
+        print('')
         for i in range(len(ScL)):
             print(ScL[i])
         print('')
@@ -399,5 +470,3 @@ while True:
     
     else:
         continue
-
-# 노드를 수정, 삭제하는 기능, 노드의 위치를 바꾸는 기능도 추가해야. 줄바꾸는 기능도.
