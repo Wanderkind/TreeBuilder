@@ -442,11 +442,16 @@ for i in range(len(LL)):
 
 for i in range(len(Lprint) - 1):
     Lprint[i + 1] = list(Lprint[i + 1])
+    W = 0
     for j in range(len(Lprint[i])):
         if Lprint[i][j] == '│' or Lprint[i][j] == '┬':
-            if Lprint[i + 1][j] == ' ':
-                Lprint[i + 1][j] = '│'
-                del Lprint[i + 1][j + 1]
+            if W + 1 < len(Lprint[i + 1]):
+                if Lprint[i + 1][W] == ' ':
+                    if not 9472 <= ord(Lprint[i + 1][W - 1]) < 9600 and not 9472 <= ord(Lprint[i + 1][W + 1]) < 9600:
+                        Lprint[i + 1][W] = '│'
+                    if Lprint[i + 1][W + 1] == ' ':
+                        del Lprint[i + 1][W + 1]
+        W += w(Lprint[i][j])
     Lprint[i + 1] = ''.join(Lprint[i + 1])
 
 print('\n▼▼▼▼▼▼▼▼▼▼\n')
