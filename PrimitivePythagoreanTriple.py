@@ -7,3 +7,6 @@ while True:
   if K in l:
    k=round(math.sqrt(K))
    if math.gcd(j,k)==1:print(i,j,k)
+
+
+# u=(j)/(i);v=(k)/(i);A=u*a-v*b;B=v*a+u*b;C=u*c-v*d;D=v*c+u*d
