@@ -2,21 +2,10 @@ import numpy as np
 import matplotlib.pyplot as plt
 X=[]
 Y=[]
-while 1:
-    i=input()
-    if i=='':break
-    y,m,s=map(int,i.split())
-    x=60*m+s
-    X.append(x)
-    Y.append(y)
-plt.plot(X,Y,'b.')
-plt.show()
-
-'''
 input()
 z=input()
 input()
-for i in range(len(z)):
+for i in range(len(z)-30):
     if z[i:i+5]=='>4444':
         y=int(z[i+5:i+9])
         j=0
@@ -26,7 +15,10 @@ for i in range(len(z)):
                 m=int(z[i+j+14:i+j+16])
                 s=int(z[i+j+17:i+j+19])
                 print(y,h+m,s)
+                X.append(60*(h+m)+s)
+                Y.append(y)
                 break
             else:
                 j+=1
-'''
+plt.plot(X,Y,'b.')
+plt.show()
