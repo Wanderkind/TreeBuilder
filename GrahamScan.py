@@ -5,7 +5,7 @@ from functools import reduce as R
 Q=lambda a:(a>0)-(a<0)
 T=lambda p,q,r:Q((q[0]-p[0])*(r[1]-p[1])-(r[0]-p[0])*(q[1]-p[1]))
 def _L(H,r):
-    while len(H)>1 and T(H[-2],H[-1], r)==-1:H.pop()
+    while len(H)>1 and T(H[-2],H[-1], r)==-1:H.pop() # <1 to exclude colinear points
     if not len(H) or H[-1]!=r:H.append(r)
     return H
 def c(P):
