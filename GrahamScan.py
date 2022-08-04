@@ -11,6 +11,6 @@ def L(H,r):
 def c(P):
     P.sort()
     l,u=R(L,P,[]),R(L,P[::-1],[])
-    return l.extend(u[i] for i in range(1,len(u)-1)) or l
+    return l+[u[i] for i in range(1,len(u)-1)] or l
 
 # C=c([[*map(int,input().split())]for _ in range(int(input()))])
