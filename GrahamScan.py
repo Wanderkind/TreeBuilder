@@ -9,8 +9,7 @@ def L(H,r):
     if not len(H) or H[-1]!=r:H.append(r)
     return H
 def c(P):
-    P.sort()
-    l,u=R(L,P,[]),R(L,P[::-1],[])
+    P.sort();l,u=R(L,P,[]),R(L,P[::-1],[])
     return l+[u[i] for i in range(1,len(u)-1)] or l
 
 # C=c([[*map(int,input().split())]for _ in range(int(input()))])
