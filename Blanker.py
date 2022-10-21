@@ -37,6 +37,6 @@ while 1:
     if w=='#####':break
     L.append(f(w))
 
-print('\n\n============== Balnked reuslt ==============\n\n')
+print('\n\n============== Blanked reuslt ==============\n\n')
 for i in L:
     print(i)
