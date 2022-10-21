@@ -1,5 +1,4 @@
 
-
 import sys
 input=lambda:sys.stdin.readline().strip()
 
@@ -38,6 +37,6 @@ while 1:
     if w=='#####':break
     L.append(f(w))
 
-print('\n\n\n\n')
+print('\n\n============== Balnked reuslt ==============\n\n')
 for i in L:
     print(i)
