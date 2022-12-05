@@ -9,7 +9,7 @@ char[] word(){
     scanf("%s", &s);
     ulong trim;
 
-    foreach(i; 0..102){
+    foreach(i; 0..101){
         if (s[i] == '\0'){
             trim = i;
             break;
