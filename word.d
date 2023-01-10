@@ -10,7 +10,7 @@ char[] word(){
     ulong trim;
 
     foreach(i; 0..101){
-        if (s[i] == '\0'){
+        if (s[i] == ' ' || s[i] == '\0'){
             trim = i;
             break;
         }
