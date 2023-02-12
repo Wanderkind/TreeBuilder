@@ -36,7 +36,7 @@ long[4] mul (long[4] a, long[4] b) {
     ];
 }
 
-long l (long n) {
+long fib (long n) {
     
     long[4] l = [1, 1, 1, 0];
     long[4] L = [1, 0, 0, 1];
