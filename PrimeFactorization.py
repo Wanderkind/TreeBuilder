@@ -6,4 +6,4 @@ def fc(n):
         if n%i:i+=1
         else:l.append(i);n/=i
     c=C(l)
-    return [[i,c[i]]for i in c]
+    return [(i,c[i])for i in c]
