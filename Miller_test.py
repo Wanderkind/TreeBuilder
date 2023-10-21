@@ -6,7 +6,7 @@ def _try_composite(a, d, n, s):
             return False
     return True
 
-def is_prime(n):
+def is_prime(n): # n > 1, otherwise inf loop
     d, s = n - 1, 0
     while not d % 2:
         d, s = d >> 1, s + 1
