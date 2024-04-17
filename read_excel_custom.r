@@ -9,3 +9,7 @@ read_excel_c <- function(str) {
 
 #df_exam <- read_excel_c("excel_exam.xlsx")
 #df_exam
+
+read_csv <- function(str) {
+  read.csv(paste(ddir, str, sep = "")) 
+}
